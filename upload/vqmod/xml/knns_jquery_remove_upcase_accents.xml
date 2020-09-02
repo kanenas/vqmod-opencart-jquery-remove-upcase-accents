@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<modification
+	xmlns="https://github.com/vqmod/vqmod"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="https://github.com/vqmod/vqmod https://raw.githubusercontent.com/vqmod/vqmod/master/vqmod.xsd"
+	>
+	<id><![CDATA[[VQMOD] Automatically removes accented characters (currently greek) from elements having their text content uppercase transformed through CSS]]></id>
+	<version>1.0</version>
+	<vqmver>2.6.2</vqmver>
+	<author>kanenas.net (aka Nikolass Branis) - nbran@kanenas.net</author>
+	<file name="catalog/view/theme/*/template/common/header.tpl" error="log">
+		<operation error="skip">
+			<search position="before"><![CDATA[</head>]]></search>
+			<add><![CDATA[<script type="text/javascript" src="<?php echo HTTP_SERVER; ?>catalog/view/javascript/custom-js/jquery.remove-upcase-accents.js"></script>]]>
+			</add>
+		</operation>
+	</file>
+</modification>
